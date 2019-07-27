@@ -110,6 +110,7 @@ let students = [
 
 
 
+
 //question no 2:
 //Print names of female students only.
 
@@ -118,6 +119,7 @@ let students = [
 //         console.log(students[i]. name );
 //     }
 // }
+
 
 
 
@@ -132,6 +134,7 @@ let students = [
 
 
 
+
 //question no 4:
 //Print names of students who have passed the admission test. Passing marks are 50
 
@@ -140,6 +143,7 @@ let students = [
 //         console.log (students[i].name);
 //     }
 // }
+
 
 
 
@@ -155,6 +159,7 @@ let students = [
 
 
 
+
 //question no 6:
 //Print address of each student in this format:
 //Amna's address:
@@ -167,6 +172,7 @@ let students = [
 
 
 
+
 //queation no 7:
 //Print names and phone number of students who have Ufone.
 
@@ -176,6 +182,7 @@ let students = [
 //         console.log(students[i].phoneNo);
 //     };
 // }
+
 
 
 
@@ -198,6 +205,7 @@ let students = [
 
 
 
+
 //queation no 9:
 //Print age of each student in the below format:
 // Amna's age is 29 years
@@ -210,26 +218,123 @@ let students = [
 - get today month
 */
 
-// for (let i = 0; i < students.length; i++) {
-//     let age1 = students[i].dob.getFullYear();
-//     let age2 = new Date(). getFullYear();
-//     console.log(students[i].name + "'s age is " + (age2 - age1) + " years");
-// }
+function calcAge(dateOfBirth) {
 
-// OR
+let dobYear = dateOfBirth.getFullYear();
+let todayYear = new Date().getFullYear();
 
-// for (let i = 0; i < students.length; i++) {
-//     let dob = students[i].dob;
-//     let today = new Date().getFullYear();
-//     let yearDiff =  
-// }
+let age = todayYear - dobYear;
+
+let dobMonth = dateOfBirth.getMonth();
+let todayMonth = new Date().getMonth();
+
+if (todayMonth < dobMonth) {
+    age--;
+} else if (todayMonth === dobMonth) {
+    let dobDate = dateOfBirth.getDate();
+    let todayDate = newDate().getDate();
+    if  (todayDate < dobDate) {
+        age--;
+    }
+
+    return
+}
+
+    for (let i = 0; i < students.length; i++) {
+        let studentAge = calcAge(student[i].dob);
+        console.log(`${students[i].name}'s age is  ${studentAge}  years`);
+    }
+
+
+
+//  question no 10:
+//Print the name of the oldest student
+
+let oldestStudent = student[0];
+
+for (let i = 0; i < student.length; i++) {
+
+    let oldestStudentAge = calcAge(oldestStudent.dob);
+    let currentStudentAge = calcAge(student[i].dob);
+
+    if  (currentStudentAge > oldestStudentAge) {
+        oldestStudent = student[i];
+    }
+}
+
+        // let dobYear = students[i].dob.getFullYear();
+        // let todayYear = new Date().getFullYear();
+
+        // let age = todayYear - dobYear;
+
+        // let dobMonth = students[i].dob.getMonth();
+        // let todayMonth = new Date().getMonth();
+
+        // if (todayMonth < dobMonth) {
+        //     age--;
+        // } else if (todayMonth === dobMonth) {
+        //     let dobDate = student[i].dob.getDate();
+        //     let todayDate = newDate().getDate();
+        //     if (todayDate < dobDate) {
+        //         age--;
+        //     }
+        // }
+
+        // console.log(students[i].name + "'s age is " + age + " years"); 
+        // SECOND TYPE OF CONCATINATION 
+
+
+
 
 
 //queation no 10:
 //Print the name of the oldest student
 
-// let age;
-// let maxAge;
-// for (let i = 0; i < students.length; i++) {
+// let oldestStudent = students[0];
 
+// for (let i = 1; i < students.length; i++) {
+//     if (students[i].age > oldestStudent.age) {
+//         oldestStudent = students[i];
+//     }
 // }
+
+// console.log(oldestStudent.name);
+
+
+
+//     OR
+
+
+
+// let student = [
+//     {
+//         name: "Talat",
+//         age: 23
+//     },
+//     {
+//         name: "Altaf",
+//         age: 21
+//     },
+//     {
+//         name: "Sofia",
+//         age: 45
+//     },
+//     {
+//         name: "Somia",
+//         age: 40
+//     },
+//     {
+//         name: "Safina",
+//         age: 22
+//     },
+// ];
+
+// let oldestStudent = student[0];
+
+// for (let i = 1; i < student.length; i++) {
+//     if (student[i].age > oldestStudent.age) {
+//         oldestStudent = student[i];
+//     }
+// }
+
+// console.log(oldestStudent.name);
